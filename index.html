@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Request Form</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="scripts/SubmitForm.js"></script>
+    <script src="scripts/FormValidation.js"></script>
+</head>
+<body onload="pleaseSelect();changeRequestType();">
+    <div class="container-fluid text-center slideanim">
+    <h1>Starter, Mover & Leaver Form</h1>
+    <form id="contact-form" class="form-horizontal">
+        <label>Type:</label><select id="hireType" onchange="changeRequestType();equipmentAndAccess();" required>
+        <option value="">Please select</option>
+        <option value="Starter">Starter</option>
+        <option value="Mover">Mover</option>
+        <option value="Leaver">Leaver</option>
+        </select><br>
+        <label>First Name:</label><input type="text" id="firstName" onchange="pleaseSelect();" required>
+        <label>Last Name:</label><input type="text" id="lastName" onchange="pleaseSelect();" required><br>
+        <label>Job Title:</label> <input type="text" id="jobTitle" onchange="pleaseSelect();" required><br>
+        <label>Department:</label><select id="department" onchange="pleaseSelect();equipmentAndAccess();" required>
+        <option value="">Please select</option>
+        <option value="Department 1">Department 1</option>
+        <option value="Department 2">Department 2</option>
+        <option value="Department 3">Department 3</option>
+        <option value="Department 4">Department 4</option>
+        </select><br>
+        <label>Line Manager:</label><input type="text" id="lineManager" onchange="pleaseSelect();" required><br>
+        <label>Location:</label><select id="location" onchange="pleaseSelect();" required>
+        <option value="">Please select</option>
+        <option value="Office 1">Office 1</option>
+        <option value="Office 2">Office 2</option>
+        <option value="Office 3">Office 3</option>
+        <option value="Office 4">Office 4</option>
+        </select><br>
+        <label id="personalEmailLabel">Personal Email Address:</label><input type="email" id="personalEmail" onchange="pleaseSelect();" required><br>
+        <label id="requestDate">Date:</label><input type="date" id="date" onchange="pleaseSelect();" required><br>
+        <h3>Equipment & Access</h3>
+        <label>Email:</label><select id="email">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="Disable">Disable</option>
+        </select><br>
+        <label>Laptop:</label><select id="laptop">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="Return">Return</option>
+        </select><br>
+        <label>Mobile:</label><select id="mobile">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="Return">Return</option>
+        </select><br>
+        <label>Completed By:</label><input type="text" id="submittedBy" onchange="pleaseSelect();" required><br>
+        <label>Additional Comments:</label><input type="text" id="additionalComments"><br>
+        <button type="button" onclick="submitToAPI()">Submit</button>
+    </form>
+    </div>
+    <!-- Footer -->
+    <footer class="container-fluid text-center">
+      <p class="footer">Site designed and built by Liam</p>
+    </footer>
+</body>
+</html>
